@@ -1,0 +1,125 @@
+.top-header{
+    background:white;
+    padding:20px 40px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    border-bottom:1px solid #e5e5e5;
+}
+
+.dashboard-title{
+    font-weight:bold;
+}
+
+.welcome-text{
+    color:gray;
+    margin-top:-5px;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.blood-type{
+    background:#fff5f5;
+    padding:8px 15px;
+    border-radius:20px;
+    font-size:14px;
+}
+
+.profile-circle-small{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#ececec;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-weight:bold;
+}
+
+.logout-text{
+    font-weight:600;
+}
+
+.active-link{
+    background:white;
+    padding:8px 18px;
+    border-radius:20px;
+}
+
+.consultation-height{
+    min-height:650px;
+}
+
+.chat-area{
+    border:1px solid #ececec;
+    border-radius:20px;
+    padding:20px;
+    height:500px;
+}
+
+.chat-message{
+    background:#f3f3f3;
+    padding:18px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.chat-message.user{
+    background:#2155ff;
+    color:white;
+}
+
+.message-input{
+    background:#f5f5f5;
+    border:none;
+    border-radius:10px;
+}
+
+.send-btn{
+    background:#020826;
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:10px 25px;
+}
+
+.video-box{
+    background:#020826;
+    height:180px;
+    border-radius:20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.video-icon{
+    font-size:60px;
+    color:white;
+}
+
+.video-btn{
+    width:100%;
+    background:#020826;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:10px;
+}
+
+.action-btn{
+    width:100%;
+    background:white;
+    border:1px solid #e5e5e5;
+    padding:12px;
+    border-radius:10px;
+    text-align:left;
+}
