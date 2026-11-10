@@ -1,125 +1,639 @@
-.top-header{
-    background:white;
-    padding:20px 40px;
+/* ==========================================================================
+   MediVault Stylesheet
+   Organized by section - use Ctrl+F for the class names you're editing
+   ========================================================================== */
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
-    border-bottom:1px solid #e5e5e5;
+:root {
+    --navy: #14213D;
+    --teal: #2A9D8F;
+    --blue: #3A6EA5;
+    --gray: #667085;
+    --border: #E4E7EC;
+    --bg: #F7F9FC;
+    --red: #D64550;
+    --white: #FFFFFF;
 }
 
-.dashboard-title{
-    font-weight:bold;
+* {
+    box-sizing: border-box;
 }
 
-.welcome-text{
-    color:gray;
-    margin-top:-5px;
+body {
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--navy);
+    margin: 0;
+    line-height: 1.5;
 }
 
-.header-right{
-    display:flex;
-    align-items:center;
-    gap:20px;
+a {
+    color: var(--blue);
+    text-decoration: none;
 }
 
-.blood-type{
-    background:#fff5f5;
-    padding:8px 15px;
-    border-radius:20px;
-    font-size:14px;
+a:hover {
+    text-decoration: underline;
 }
 
-.profile-circle-small{
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    background:#ececec;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-weight:bold;
+/* Visible keyboard focus everywhere, for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
 }
 
-.logout-text{
-    font-weight:600;
+/* ==========================================================================
+   Login / Register pages
+   ========================================================================== */
+
+.login-box {
+    background: var(--white);
+    max-width: 360px;
+    margin: 10vh auto;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(20, 33, 61, 0.08);
+    text-align: center;
 }
 
-.active-link{
-    background:white;
-    padding:8px 18px;
-    border-radius:20px;
+.login-box h2 {
+    margin: 0 0 4px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--navy);
 }
 
-.consultation-height{
-    min-height:650px;
+.login-box .login-logo {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 24px;
 }
 
-.chat-area{
-    border:1px solid #ececec;
-    border-radius:20px;
-    padding:20px;
-    height:500px;
+.login-box p {
+    color: var(--gray);
+    font-size: 14px;
+    margin: 0 0 24px;
 }
 
-.chat-message{
-    background:#f3f3f3;
-    padding:18px;
-    border-radius:15px;
-    margin-bottom:20px;
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.chat-message.user{
-    background:#2155ff;
-    color:white;
+.login-box input {
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
 }
 
-.message-input{
-    background:#f5f5f5;
-    border:none;
-    border-radius:10px;
+.login-box button {
+    padding: 12px;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
 }
 
-.send-btn{
-    background:#020826;
-    color:white;
-    border:none;
-    border-radius:10px;
-    padding:10px 25px;
+.login-box button:hover {
+    background: #0d1730;
 }
 
-.video-box{
-    background:#020826;
-    height:180px;
-    border-radius:20px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.login-box .error {
+    color: var(--red);
+    font-size: 14px;
+    margin: -8px 0 4px;
 }
 
-.video-icon{
-    font-size:60px;
-    color:white;
+.switch-link {
+    font-size: 14px;
+    color: var(--gray);
+    margin-top: 20px;
 }
 
-.video-btn{
-    width:100%;
-    background:#020826;
-    color:white;
-    border:none;
-    padding:12px;
-    border-radius:10px;
+/* ==========================================================================
+   Dashboard header + nav (includes/navbar.php)
+   ========================================================================== */
+
+.dashboard-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.action-btn{
-    width:100%;
-    background:white;
-    border:1px solid #e5e5e5;
-    padding:12px;
-    border-radius:10px;
-    text-align:left;
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo-title .logo {
+    height: 36px;
+    width: 36px;
+}
+
+.logo-title h1 {
+    font-size: 18px;
+    margin: 0;
+    color: var(--navy);
+}
+
+.logo-title p {
+    font-size: 13px;
+    color: var(--gray);
+    margin: 2px 0 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.blood-type-badge {
+    border: 1px solid var(--red);
+    color: var(--red);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 999px;
+}
+
+.avatar {
+    background: var(--navy);
+    color: var(--white);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.logout-link {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.dashboard-nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+}
+
+.nav-item {
+    padding: 14px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray);
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+}
+
+.nav-item:hover {
+    color: var(--navy);
+    text-decoration: none;
+}
+
+.nav-item.active {
+    color: var(--teal);
+    border-bottom-color: var(--teal);
+}
+
+/* ==========================================================================
+   Shared page content wrapper
+   ========================================================================== */
+
+.dashboard-content {
+    max-width: 900px;
+    margin: 32px auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.dashboard-content h2 {
+    font-size: 19px;
+    margin: 0 0 4px;
+}
+
+.section-subtitle {
+    color: var(--gray);
+    font-size: 14px;
+    margin: 0 0 16px;
+}
+
+.success-message {
+    background: #E9F7F5;
+    color: var(--teal);
+    border: 1px solid var(--teal);
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.error-message {
+    background: #FBEAEC;
+    color: var(--red);
+    border: 1px solid var(--red);
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   Overview page (dashboard.php)
+   ========================================================================== */
+
+.overview-cards {
+    display: flex;
+    gap: 16px;
+}
+
+.card {
+    flex: 1;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--teal);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.card h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray);
+    margin: 0 0 6px;
+}
+
+.card-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0;
+}
+
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-button {
+    display: block;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    color: var(--navy);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.action-button:hover {
+    border-color: var(--teal);
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   Medications page
+   ========================================================================== */
+
+.medication-search-form {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.medication-search-form input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.medication-search-form button {
+    padding: 10px 18px;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.clear-search-link {
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.no-results-message {
+    color: var(--gray);
+    font-size: 14px;
+    padding: 16px 0;
+}
+
+.medication-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--teal);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 14px;
+}
+
+.medication-card h3 {
+    margin: 0 0 2px;
+    font-size: 16px;
+}
+
+.medication-card .dosage {
+    color: var(--gray);
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+
+.medication-card p {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+.medication-card p span {
+    color: var(--gray);
+}
+
+.progress-bar {
+    background: var(--border);
+    border-radius: 999px;
+    height: 8px;
+    margin: 10px 0 16px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--teal), var(--blue));
+    border-radius: 999px;
+}
+
+.request-refill-button {
+    padding: 8px 16px;
+    background: var(--white);
+    border: 1px solid var(--navy);
+    color: var(--navy);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.request-refill-button:hover {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.medication-history {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 20px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-name {
+    font-size: 14px;
+    margin: 0;
+}
+
+.status-badge {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gray);
+    background: var(--bg);
+    padding: 3px 10px;
+    border-radius: 999px;
+}
+
+/* ==========================================================================
+   Consultation page
+   ========================================================================== */
+
+.chat-window {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    max-height: 420px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.chat-bubble {
+    max-width: 75%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.chat-bubble.doctor {
+    align-self: flex-start;
+    background: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.chat-bubble.patient {
+    align-self: flex-end;
+    background: var(--navy);
+    color: var(--white);
+}
+
+.chat-bubble .chat-sender {
+    font-weight: 600;
+    font-size: 12px;
+    margin: 0 0 2px;
+}
+
+.chat-bubble.doctor .chat-sender {
+    color: var(--teal);
+}
+
+.chat-bubble.patient .chat-sender {
+    color: #A9C4E0;
+}
+
+.chat-bubble .chat-text {
+    margin: 0;
+}
+
+.chat-bubble .chat-time {
+    font-size: 11px;
+    margin: 4px 0 0;
+    opacity: 0.7;
+}
+
+.delete-message-form {
+    margin: 6px 0 0;
+}
+
+.delete-message-button {
+    background: none;
+    border: none;
+    color: inherit;
+    opacity: 0.7;
+    font-size: 11px;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.chat-input-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.chat-input-form input {
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.chat-input-form button {
+    padding: 12px 22px;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   Profile page
+   ========================================================================== */
+
+.personal-information,
+.medical-information,
+.account-settings {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--navy);
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.personal-information form,
+.medical-information form,
+.account-settings form {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.personal-information label,
+.medical-information label,
+.account-settings label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray);
+    margin-top: 10px;
+}
+
+.personal-information input,
+.personal-information select,
+.medical-information input,
+.medical-information select,
+.medical-information textarea,
+.account-settings input {
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.medical-information textarea {
+    min-height: 60px;
+    resize: vertical;
+}
+
+.personal-information button,
+.medical-information button,
+.account-settings button {
+    align-self: flex-start;
+    margin-top: 16px;
+    padding: 10px 20px;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.personal-information button:hover,
+.medical-information button:hover,
+.account-settings button:hover {
+    background: #0d1730;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 640px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .overview-cards {
+        flex-direction: column;
+    }
+
+    .chat-bubble {
+        max-width: 90%;
+    }
 }
